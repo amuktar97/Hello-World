@@ -1,2 +1,7 @@
 # Hello-World
-Hello 
+Learning
+
+---
+
+lesson summary
+-

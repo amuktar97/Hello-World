@@ -13,7 +13,7 @@ void setup() {
   println("Display Monitor:", "\twidth="+displayWidth, "& height="+displayHeight);
   //
   //Ternary Operator
-  String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru, turn yhou phun";
+  String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru, turn your phun";
   String orientation = ( width >= height ) ? ls : p;
   println (DO, orientation);
   //

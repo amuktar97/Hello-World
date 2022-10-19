@@ -3,7 +3,7 @@ int appWidth, appHeight;
 //
 void setup() {
   //Declare Display Geometry: square, landscape, portrait
-  size(700, 400); //Use size for debugging
+  size(2000, 400); //Use size for debugging
   //fullScreen(); //Use fullScreen for easy deployment
   appWidth = width;
   appHeight = height;
@@ -32,10 +32,6 @@ void setup() {
   //If ORIENTATION is wrong ... feedback to change it
   //if ( orientation==p ) println(instruct);
   //
-  //Fit CANVAS into Display Monitor
-
-  
-  if ( appWidth == 0 || appHeight == 0 ) println("STOP, is broken");
 } //End setup
 //
 void draw() {

@@ -38,10 +38,7 @@ void draw() {
   ellipse(150, 100, 70, 30);
   circle(224, 184, 220);
   quad(152, 124, 344, 80, 276, 252, 120, 304);
-  point(120, 80, -200);
-  point(340, 80, -200);
-  point(340, 300, -200);
-  point(120, 300, -200);
+  
 } //End draw
 //
 void keyPressed() {

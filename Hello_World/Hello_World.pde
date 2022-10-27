@@ -42,6 +42,11 @@ void setup() {
 } //End setup
 //
 void draw() {
+  background(255); //Gray Scale 0-255
+  background( color(random(0, 255), random(255), random(255) )); //colar(r,g,b), 
+  //Night Mode
+  background(black);
+  //
   rect(xStart, yStart, widthRect, heightRect);
   
 } //End draw

@@ -1,9 +1,10 @@
 //Global Variables
 int appWidth, appHeight;
 float centerWidth, centerHeight, xStart, yStart, widthRect, heightRect;
-color black=#050805, white=#FFFFFF, purple=#FA00F6, yellow=#F8FC64;
+color black=#000000, white=#FFFFFF, purple=#FA00F6, yellow=#F8FC64;
 color yellowNightMode=#F8FC00, purpleNightMode=#FA0096;
 float thick, thin;
+Boolean grayScale=false, randomColour=false, blackBackground=false, nightMode=false;
 //
 void setup() {
   //Declare Display Geometry: square, landscape, portrait
@@ -27,38 +28,49 @@ void setup() {
     if ( appWidth > displayWidth ) appWidth = 0; //CANVAS-width will not fit
     if ( appHeight > displayHeight ) appHeight = 0; //CANVAS-height will not fit
     if ( appWidth != 0 && appHeight != 0 ) {
-    print("Display Geoemtry is Good to Go.");
-  } else {
+      print("Display Geoemtry is Good to Go.");
+    } else {
       println("STOP, is broken");
     }
   }
   //
   //If ORIENTATION is wrong ... feedback to change it
   //if ( orientation==p ) println(instruct);
+  //
   //Population
-  centerWidth = width * 1/2;
-  centerHeight = height * 1/2;
-  xStart = centerWidth - (width * 1/4);
-  yStart = centerHeight - (height * 1/4);
-  widthRect = width * 1/2;
-  heightRect = height * 1/2;
-  thick = width * 1/70;
-  thin = width *1/40;
+  centerWidth = appWidth * 1/2;
+  centerHeight = appHeight * 1/2;
+  xStart = centerWidth - ( appWidth * 1/4 ) ;
+  yStart = centerHeight - ( appHeight * 1/4 ) ;;
+  widthRect = appWidth * 1/2;
+  heightRect = appHeight * 1/2;
+  thick = appWidth * 1/70;
+  thin =  appWidth * 1/140;
 } //End setup
 //
 void draw() {
-  background(255); //Gray Scale 0-255
-  background( color(random(0, 255), random(255), random(255) )); //colar(r,g,b), Casting
+  if ( grayScale == true ) background(225); //Gray Scale 0-255
+  //random(a, b)
+  if ( randomColour == true ) background( color( random(0, 255), random(255), random(255) ) ); //color(r,g,b), Casting 
   //Night Mode
-  background(black);
+  if ( blackBackground == true ) background(black);
   //
-  strokeWeight(thick);//noStroke()
-  stroke(yellow); //yellowNightMode
-  fill(purple);   //purpleNightMode
+  strokeWeight(thick); //noStroke()
+  //Night Mode Decision
+  if ( nightMode == true )
+  {
+    stroke(yellowNightMode);
+    fill(purpleNightMode);
+  } else
+  {
+    stroke(yellow);
+    fill(purple);
+  }
   rect(xStart, yStart, widthRect, heightRect);
-  fill(white);// Reset default
-  stroke(black);//Reset default
-  strokeWeight(1);//Reset default
+  // Reset default
+  fill(white);
+  stroke(black);
+  strokeWeight(1);
 } //End draw
 //
 void keyPressed() {
@@ -68,4 +80,3 @@ void mousePressed() {
 } //End mousePressed
 //
 // End Main Program
-  

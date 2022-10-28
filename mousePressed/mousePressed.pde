@@ -16,7 +16,9 @@ void mousePressed() {
   if ( mouseButton == RIGHT ) nightMode = false;
   if ( mouseButton == CENTER ) {
     ahhh = true;
-  } else {}
+  } else {
+    ahhh = false;
+  }
 }//End moisePressed
 //
 //End Main Program
